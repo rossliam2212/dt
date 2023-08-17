@@ -1,9 +1,16 @@
 ### dt - C++ Date and Time Library
 
+#### Features:
+- Date and time manipulation
+- Calendar calculations
+- Stopwatch functionality
+- Handling formatted dates
+- Exception handling for invalid dates and times
+
 #### How to build & use:
 #### 1. Clone repo and install.
 ```bash
-$ git clone https://github.com/rossliam2212/dt.git
+$ git clone https://github.com/<your_username>/dt.git
 $ mikdir build && cd build
 $ sudo cmake --build . --target install
 ```

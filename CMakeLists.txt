@@ -38,6 +38,7 @@ target_include_directories(dt PUBLIC
 )
 install(TARGETS dt EXPORT dtTargets ARCHIVE DESTINATION lib)
 install(EXPORT dtTargets FILE dtTargets.cmake NAMESPACE dt:: DESTINATION lib/cmake/dt)
+install(FILES cmake/dt-config.cmake DESTINATION lib/cmake/dt)
 
 install(FILES include/dt/Constants.hpp DESTINATION include/dt)
 install(FILES include/dt/date/Date.hpp DESTINATION include/dt/date)
