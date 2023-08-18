@@ -90,6 +90,28 @@ namespace dt {
         return *this;
     }
 
+    Calendar& Calendar::operator--() {
+        --currentMonth;
+        if (currentMonth <= 0) {
+            currentMonth = 12;
+            --currentYear;
+        }
+
+        setDates();
+        return *this;
+    }
+
+    Calendar& Calendar::operator--(int) {
+        --currentMonth;
+        if (currentMonth <= 0) {
+            currentMonth = 12;
+            --currentYear;
+        }
+
+        setDates();
+        return *this;
+    }
+
     /**
      * @brief Converts the calendar to a string.
      * @return The calendar as a string.

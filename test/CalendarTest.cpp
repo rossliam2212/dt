@@ -138,4 +138,59 @@ TEST(Calendar, GIVEN_calendarObject_WHEN_incrementedPost_THEN_correctlyIncrement
     dt::Calendar calendar{1, 1, 2023};
     calendar++;
     ASSERT_EQ(expectedDate, calendar.getCurrentDate());
+
+    dt::Date expectedDate2{1, 1, 2024};
+    dt::Calendar calendar2{1, 12, 2023};
+    calendar2++;
+
+    ASSERT_EQ(1, calendar2.getCurrentDay());
+    ASSERT_EQ(1, calendar2.getCurrentMonth());
+    ASSERT_EQ(2024, calendar2.getCurrentYear());
+    ASSERT_EQ(expectedDate2, calendar2.getCurrentDate());
+}
+
+/**
+ * @brief @c Calendar test 8.
+ */
+TEST(Calendar, GIVEN_calendarObject_WHEN_decrementPre_THEN_correctlyDecremented) {
+    dt::Date expectedDate{1, 1, 2023};
+    dt::Calendar calendar{1, 2, 2023};
+    --calendar;
+
+    ASSERT_EQ(1, calendar.getCurrentDay());
+    ASSERT_EQ(1, calendar.getCurrentMonth());
+    ASSERT_EQ(2023, calendar.getCurrentYear());
+    ASSERT_EQ(expectedDate, calendar.getCurrentDate());
+
+    dt::Date expectedDate2{1, 12, 2022};
+    dt::Calendar calendar2{1, 1, 2023};
+    --calendar2;
+
+    ASSERT_EQ(1, calendar2.getCurrentDay());
+    ASSERT_EQ(12, calendar2.getCurrentMonth());
+    ASSERT_EQ(2022, calendar2.getCurrentYear());
+    ASSERT_EQ(expectedDate2, calendar2.getCurrentDate());
+}
+
+/**
+ * @brief @c Calendar test 9.
+ */
+TEST(Calendar, GIVEN_calendarObject_WHEN_decrementPost_THEN_correctlyDecremented) {
+    dt::Date expectedDate{1, 1, 2023};
+    dt::Calendar calendar{1, 2, 2023};
+    calendar--;
+
+    ASSERT_EQ(1, calendar.getCurrentDay());
+    ASSERT_EQ(1, calendar.getCurrentMonth());
+    ASSERT_EQ(2023, calendar.getCurrentYear());
+    ASSERT_EQ(expectedDate, calendar.getCurrentDate());
+
+    dt::Date expectedDate2{1, 12, 2022};
+    dt::Calendar calendar2{1, 1, 2023};
+    calendar2--;
+
+    ASSERT_EQ(1, calendar2.getCurrentDay());
+    ASSERT_EQ(12, calendar2.getCurrentMonth());
+    ASSERT_EQ(2022, calendar2.getCurrentYear());
+    ASSERT_EQ(expectedDate2, calendar2.getCurrentDate());
 }

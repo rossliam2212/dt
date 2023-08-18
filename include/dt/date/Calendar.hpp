@@ -27,6 +27,8 @@ namespace dt {
 
         Calendar& operator++();
         Calendar& operator++(int);
+        Calendar& operator--();
+        Calendar& operator--(int);
 
         std::string toString() const;
         void displayAllDates();
