@@ -61,11 +61,13 @@ TEST(FormattedDate, GIVEN_formattedDateObject_WHEN_createdWithInvalidDay_THEN_de
  * @brief @c FormattedDate test 5.
  */
 TEST(FormattedDate, GIVEN_formattedDateObject_WHEN_createdWithValidValues_THEN_valuesSet) {
+    dt::Date expectedDate{22, 12, 2001};
     dt::FormattedDate date{22, 12, 2001, dt::DateFormat::DD_MM_YYYY};
 
     ASSERT_EQ(22, date.getDay());
     ASSERT_EQ(12, date.getMonth());
     ASSERT_EQ(2001, date.getYear());
+    ASSERT_EQ(expectedDate, date.getDate());
     ASSERT_FALSE(date.isLeapYear());
 }
 

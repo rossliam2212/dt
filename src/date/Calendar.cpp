@@ -90,6 +90,10 @@ namespace dt {
         return *this;
     }
 
+    /**
+     * @brief Overloaded pre-decrement operator. Decrements the month by one and adjusts the year if necessary.
+     * @return A reference to the object after decrementing.
+     */
     Calendar& Calendar::operator--() {
         --currentMonth;
         if (currentMonth <= 0) {
@@ -101,6 +105,10 @@ namespace dt {
         return *this;
     }
 
+    /**
+     * @brief Overloaded post-decrement operator. Decrements the month by one and adjusts the year if necessary.
+     * @return A reference to the object after decrementing.
+     */
     Calendar& Calendar::operator--(int) {
         --currentMonth;
         if (currentMonth <= 0) {

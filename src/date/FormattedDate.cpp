@@ -115,6 +115,14 @@ namespace dt {
     }
 
     /**
+     * @brief Gets the underlying @c Date.
+     * @return The underlying @c Date.
+     */
+    Date FormattedDate::getDate() const {
+        return date;
+    }
+
+    /**
      * @brief Gets the day of the week that the date corresponds to.
      * @return The day of the week.
      */

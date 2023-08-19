@@ -62,6 +62,7 @@ namespace dt {
         int getDay() const;
         int getMonth() const;
         int getYear() const;
+        Date getDate() const;
         std::string getDayOfWeek();
         bool isLeapYear() const;
         std::string toString() const;
